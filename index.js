@@ -24,7 +24,7 @@ const users = [
 
 // POST /api/authenticate endpoint
 app.post('/api/authenticate', (req, res) => {
-    console.log("Just got a request bitchesss")
+    console.log("Just got a request Hooooooooooo22")
 
     const { email, password } = req.body;
 
