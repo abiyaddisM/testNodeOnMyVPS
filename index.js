@@ -11,10 +11,7 @@ app.use(cors());
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
-app.use(cors({
-    origin: 'https://menem-streaming.web.app', // Replace with your Firebase app URL
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}));
+
 // Secret key for JWT
 const jwtSecretKey = 'your_secret_key';
 
