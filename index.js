@@ -17,9 +17,9 @@ const jwtSecretKey = 'your_secret_key';
 
 // Mock user credentials (replace with your actual authentication logic)
 const users = [
-    { id: 1, email: 'user1@example.com', password: 'password1' },
-    { id: 2, email: 'user2@example.com', password: 'password2' },
-    { id: 2, email: 'a', password: 'a' }
+    { id: 1, email: 'user1@example.com', password: 'password1',username:'User1' },
+    { id: 2, email: 'user2@example.com', password: 'password2',username:'User2' },
+    { id: 2, email: 'a', password: 'a',username:'abiyaddis' }
 ];
 
 // POST /api/authenticate endpoint
@@ -36,7 +36,7 @@ app.post('/api/authenticate', (req, res) => {
     }
 
     // Generate JWT token
-    const token = jwt.sign({ sub: user.id, email: user.email }, jwtSecretKey, { expiresIn: '1d' });
+    const token = jwt.sign({ sub: user.id, email: user.email,username: user.username}, jwtSecretKey, { expiresIn: '1d' });
 
     // Return token
     res.status(200).json({ success: true, token });
